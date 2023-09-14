@@ -245,7 +245,7 @@ export class Telegraf<C extends Context = Context> extends Composer<C> {
 
   secretPathComponent() {
     return crypto
-      .createHash('sha3-256')
+      .createHash('sha256')
       .update(this.token)
       .update(process.version) // salt
       .digest('hex')
